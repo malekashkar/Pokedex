@@ -39,8 +39,7 @@ export default class Bot extends Client {
         let args = content.trim().replace(/ /g, "\n").split(/\n+/g);
         const command = args.shift().toLowerCase();
 
-        // commandObj.aliases.map((x) => x.toLowerCase()).includes(command)
-        if(command == "pokedex") {
+        if(command == "pokedex" || command == "info" || command == "search") {
             if (!args[0]) {
                 await message.channel.send({
                     embeds: [embeds.error("What do I info? :face_with_raised_eyebrow:")]
